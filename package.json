@@ -1,0 +1,32 @@
+{
+  "name": "es6lambda",
+  "version": "0.0.1",
+  "description": "A skeleton project for ES6 development in lambda",
+  "main": "index.js",
+  "bin": {
+    "es6lambda": "run.js"
+  },
+  "scripts": {
+    "build": "webpack",
+    "test": "mocha --compilers js:babel-core/register --recursive tests/",
+    "deploy": "(cd dist;zip ../dist.zip hello.js) ;aws lambda update-function-code --function-name CHANGEME --zip-file fileb://dist.zip"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "json-loader": "^0.5.7",
+    "mocha": "^5.2.0",
+    "transform-runtime": "0.0.0",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.294.0"
+  }
+}
